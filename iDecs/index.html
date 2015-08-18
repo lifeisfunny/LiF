@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/frontmenu.css">
-    <title></title>
+    <script src="javascript/menuControl.js"></script>
+    <script src="javascript/jquery-2.1.4.js"></script>
 </head>
 <body>
 <div class = "mainMenu">
-    <div id = "Room" class = "open"><p>Overview</p></div>
-    <div id = "addDevice" class = "open"><p>ADD device</p></div>
-    <div id = "connect" class = "close"><p>Connect</p></div>
+    <div id = "Room" class = "open" onclick="menuControl(this)"><p>Overview</p></div>
+    <!--this is tab for display all device location and states-->
+    <div id = "addDevice" class = "close" onclick="menuControl(this)"><p>ADD device</p></div>
+    <!--this is tab for display windows for user to  add a new device to overview menu-->
+    <div id = "connect" class = "open" onclick="menuControl(this)"><p>Connect</p></div>
+    <!--this is tab for display window for user to connect to idces server-->
 </div>
-
+<div class="main">
+    <div id="page1" class="content">
+        <h1>Page 1</h1>
+        <p>First section of content.</p>
+    </div>
+    <div id="page2" class="content">
+        <h1>Page 2</h1>
+        <p>Second section of content</p>
+    </div>
+    <div id="page3" class="content">
+        <h1>Page 3</h1>
+        <p>Third section of content.</p>
+    </div>
+</div>
 </body>
 </html>
