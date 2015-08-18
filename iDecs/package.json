@@ -1,0 +1,12 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "main":"index.html",
+  "window":{
+    "width":1200,
+    "height":680,
+    "frame": false,
+    "toolbar": false
+  }
+
+}

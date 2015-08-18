@@ -1,0 +1,47 @@
+html,body{
+    overflow: hidden;
+    width: 1200px;
+    height: 680px;
+    padding: 0px;
+    margin: 0px;
+}
+div.mainMenu{
+    position:relative;
+    width: 1200px;
+    height: 60px;
+    float: left;
+    background-color: red;
+    display: block;
+    margin:0px;
+    padding: 0px;
+}
+#connect{
+    float:right;
+    margin-right: 40px;
+}
+p {
+    text-align:center;
+}
+.open{
+    position: relative;
+    float: left;
+    background-color: aqua;
+    width: 130px;
+    height: 40px;
+    margin-left: 40px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border: 5px solid aqua;
+    margin-top: 10px;
+}
+.close{
+    position: relative;
+    float: left;
+    background-color: aqua;
+    width: 130px;
+    height: 40px;
+    margin-left: 40px;
+    border-radius: 30px ;
+    border: 5px solid aqua;
+    margin-top: 5px;
+}

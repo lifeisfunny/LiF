@@ -1,0 +1,35 @@
+This is workspaces for creating iDecs local/remote interface based on html.
+
+Structure of the interface is based on xml and javascript.It is using mqttws31.js as javascript client
+ for mosquitto local server.
+
+Xml file are here use to define devices and rooms relationship ,also contain the topic information for javascript client.
+
+There should be two type of information transmitting under each topic
+
+      Device status information:
+           Status information provide connectivity indication between device and iDecs.For each individual device after
+       setup, the task is subscribe to the topic and publish "connect" message to the topic ,the publish a LAST WILL
+       AND TESTAMENT (lwt) message "disconnect" to the topic.In the event device sudden disconnect. Mqtt server will
+       release lwt message to topic,and the related interface will ture to disable stage until device is reconnected
+       and "connect" message is published again.
+
+      Command and data information:
+          Command and data are passing in between device and interface with in format of string(So far I only tried string).
+       For example ,A IoT light is setup and connected,The switch related to device is on enable stage.There are two state
+       on the switch and two state on device which are on & off . When the Switch turn to off state, Mqtt javascript will
+       seen a message "OFF" to the topic which device and related interface subscribe to .Then device will receive the
+       message "OFF". Soon as device receive the "OFF" command , It will set the device to off state and publish a retained
+       message "deviceOFF".Then Switch will switch to off state based on message"deviceOFF" other wise Switch will turn
+       back to on state till message received.What the retained message would do is that when a new controller (another
+       controlling device like mobile phone )subscribe to this topic ,It will receive the last retained message to set
+       the interface to the right state.
+
+
+
+I am uploading a xml examples,and i hope that would help you to understand how the xml looks like.
+
+I will also provide a graphic structure on how the system should function.
+
+The mqttws31.js is a javascript websocket client for mqtt server .
+the usage of mqttws31.js can be find on eclipse paho project.
