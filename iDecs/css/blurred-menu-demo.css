@@ -1,27 +1,3 @@
-html,body{
-    overflow: hidden;
-    max-width: 1200px;
-    max-height: 680px;
-    padding: 0px;
-    margin: 0px;
-    background-image: url("../artwork/background.jpg");
-    background-size: cover;
-}
-.wrapper {
-    height: 600px;
-    width: 100%;
-    margin-top: 80px;
-    overflow: hidden;
-}
-.main section  {
-    overflow: hidden;
-    background-color: whitesmoke;
-    opacity: 0.3;
-}
-p{
-    text-decoration-color: black;
-    opacity: 1;
-}
 
 
 #menu {
@@ -93,4 +69,17 @@ The white stripes in the hamburger button
     height: 2px;
     margin-top: 3px;
     width: 90%;
+}
+/*
+The demo content
+*/
+#content {
+    width: 800px;
+}
+#content img {
+    float: left;
+    padding: 10px 15px 10px 0
+}
+p {
+    clear:both;
 }

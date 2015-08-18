@@ -2,24 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/frontmenu.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.sidr.dark.css">
+    <link rel="stylesheet" type="text/css" href="css/frontMenu.css">
+    <link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
     <script src="javascript/jquery-2.1.4.js"></script>
-    <script src="javascript/jquery.sidr.min.js"></script>
+    <script src="javascript/jquery.onepage-scroll.js"></script>
+    <script src="javascript/ext_fastblur.js"></script>
+    <script src="javascript/ext_html2canvas.js"></script>
+    <script src="javascript/blurry-menu.js"></script>
 </head>
 <body>
-<a id = "simple-menu" href="#sidr">Toggle menu</a>
-<div id="sidr">
-    <ul>
-        <li><a href="#">list 1</a></li>
-        <li class = "active"><a href="#">list 2</a></li>
-        <li><a href="#">list 3</a></li>
-    </ul>
+<div id="menu">
+
+    <!-- This image will not be displayed. The data-source from the canvas-screenshot will be set to this image -->
+    <img id="captured-image" src="img/">
+
+    <!-- The canvas placeholder where the image after beeing blurred  will be set -->
+    <canvas id="blurred-bg-canvas"></canvas>
+
+    <!-- simple demo menu content -->
+    <div id="menu-content">
+        <ul>
+            <li class="first">things</li>
+            <li>things</li>
+            <li>things</li>
+            <li>things</li>
+            <li>things</li>
+            <li class="last">Fuck me this is lot typing</li>
+        </ul>
+    </div>
+</div>
+<div id="hamburger" onclick="BlurryMenu.openMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<div class="wrapper">
+    <div class="main">
+        <section class="page1">
+            <p>This is user Floor bird view</p>
+        </section>
+        <section class="page2">
+            <p>This is user Floor bird view</p>
+        </section>
+        <section class="page3">
+            <p>This is user Floor bird view</p>
+        </section>
+    </div>
 </div>
 <script>
     $(document).ready(function(){
-        $('#simple-menu').sidr();
+        $(".main").onepage_scroll({
+            sectionContainer: "section",
+            easing:"ease",
+            responsiveFallback: 600,
+            loop: false
+        });
     });
+
 </script>
+
 </body>
 </html>
