@@ -6,43 +6,25 @@
     <link rel="stylesheet" type="text/css" href="css/onepage-scroll.css">
     <script src="javascript/jquery-2.1.4.js"></script>
     <script src="javascript/jquery.onepage-scroll.js"></script>
-    <script src="javascript/ext_fastblur.js"></script>
-    <script src="javascript/ext_html2canvas.js"></script>
-    <script src="javascript/blurry-menu.js"></script>
+
 </head>
 <body>
-<div id="menu">
-
-    <!-- This image will not be displayed. The data-source from the canvas-screenshot will be set to this image -->
-    <img id="captured-image" src="img/">
-
-    <!-- The canvas placeholder where the image after beeing blurred  will be set -->
-    <canvas id="blurred-bg-canvas"></canvas>
-
-    <!-- simple demo menu content -->
-    <div id="menu-content">
-        <ul>
-            <li class="first">things</li>
-            <li>things</li>
-            <li>things</li>
-            <li>things</li>
-            <li>things</li>
-            <li class="last">Fuck me this is lot typing</li>
-        </ul>
-    </div>
+<!--Left site open setting menu -->
+<div id="leftMenu" class="settingMenuHide">
+<div id="settingButton">
+    <p>We need setting icons</p>
+    <p>A seting icon with max with of 75px and 650px height </p>
+    <p>At it max width and height   it has to have a right side top and bottom radius of 75px </p>
+    <h1>Click here to open setting menu</h1>
 </div>
-<div id="hamburger" onclick="BlurryMenu.openMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
 </div>
-
-<div class="wrapper">
+    <!--Code below is the content of the room view on main desktop-->
+<div id="roomView" class="wrapper">
     <div class="main">
-        <section class="page1">
+        <section  class="page1">
             <p>This is user Floor bird view</p>
         </section>
-        <section class="page2">
+        <section  class="page2">
             <p>This is user Floor bird view</p>
         </section>
         <section class="page3">
@@ -50,13 +32,21 @@
         </section>
     </div>
 </div>
+
+
+<!--java script-->
 <script>
-    $(document).ready(function(){
+
+    $(document).ready(function() {
         $(".main").onepage_scroll({
             sectionContainer: "section",
-            easing:"ease",
+            easing: "ease",
             responsiveFallback: 600,
             loop: false
+        });
+
+        $('#settingButton').on('click', function () {
+            $('#leftMenu').toggleClass('settingMenuShow');
         });
     });
 
