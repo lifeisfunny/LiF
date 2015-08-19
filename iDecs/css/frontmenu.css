@@ -6,91 +6,48 @@ html,body{
     margin: 0px;
     background-image: url("../artwork/background.jpg");
     background-size: cover;
+
 }
 .wrapper {
-    height: 600px;
-    width: 100%;
-    margin-top: 80px;
+    position: absolute;
+    height: 630px;
+    width: 1000px;
+    margin-top: 25px;
+    margin-left: 100px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .main section  {
     overflow: hidden;
-    background-color: whitesmoke;
-    opacity: 0.3;
+    box-shadow:0px 0px 50px 10px #000000 inset;
 }
-p{
-    text-decoration-color: black;
-    opacity: 1;
-}
-
-
-#menu {
-    box-shadow: 5px 5px 30px #000000;
+.settingMenuHide{
     position: absolute;
-    width: 0px;
+    height: 650px;
+    width:1200px;
+    margin-top: 15px;
     overflow: hidden;
-    top: 0px;
-    left: -7px;
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow:0px 0px 50px 10px rgb(0, 0, 0) inset;
+    -webkit-transform: translateX(-1125px);
+    border-bottom-right-radius: 75px;
+    border-top-right-radius: 75px;
+    -webkit-transition: border-bottom-right-radius 0.5s, border-top-right-radius, background-color 0.5s, -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-#menu-content {
-    position: relative;
-}
-
-#blurred-bg-canvas {
+.settingMenuShow{
     position: absolute;
+    z-index: 10;
+    -webkit-transform: translateX(-100px);
+    background-color: rgba(0, 4, 4, 0.8);
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -webkit-transition: border-bottom-right-radius 0.5s, border-top-right-radius, background-color 0.5s, -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-#captured-image {
-    display: none;
-}
-
-/*
-a nice list inside the blurred menu container
-*/
-#menu-content ul {
-    list-style: outside none none;
-}
-#menu-content ul li {
-    border-bottom: 1px solid #333;
-    border-top: 1px solid #555;
-    padding: 12px;
-    width: 80%;
-    white-space: nowrap;
-}
-#menu-content ul li.first {
-    border-top: none;
-}
-#menu-content ul li.last {
-    border-bottom: none;
+#settingButton{
+    width: 75px;
+    height: 100%;
+    float: right;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 
-/*
-just for the menu Button trigger
-the hamburger button with a little gradient effekt
-*/
-#hamburger {
-    border: 1px solid #374C77;
-    border-radius: 3px 3px 3px 3px;
-    cursor: pointer;
-    display: block;
-    height: 24px;
-    padding: 3px 4px 3px;
-
-    width: 25px;
-    background: #4569b2;
-    background: linear-gradient(to bottom, #23405c 0%, #37506d 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-}
-/*
-The white stripes in the hamburger button
-*/
-#hamburger div {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 2px 2px 2px 2px;
-    height: 2px;
-    margin-top: 3px;
-    width: 90%;
-}
