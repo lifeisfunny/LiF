@@ -6,7 +6,6 @@ html,body{
     margin: 0px;
     background-image: url("../artwork/background.jpg");
     background-size: cover;
-
 }
 .wrapper {
     position: absolute;
@@ -43,11 +42,17 @@ html,body{
     border-top-right-radius: 0px;
     -webkit-transition: border-bottom-right-radius 0.5s, border-top-right-radius, background-color 0.5s, -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
 #settingButton{
+    position: relative;
     width: 75px;
     height: 100%;
     float: right;
     background-color: rgba(255, 255, 255, 0.4);
 }
-
-
+.menu{
+    float: left;
+    width: 100px;
+    margin-left: 100px;
+    background-color: #C0392B;
+}
