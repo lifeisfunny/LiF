@@ -22,7 +22,7 @@
     animationTime: 1000,
     pagination: true,
     updateURL: false,
-    keyboard: true,
+    keyboard: false,
     beforeMove: null,
     afterMove: null,
     loop: true,
@@ -319,7 +319,7 @@
 
     // Create Pagination and Display Them
     if (settings.pagination == true) {
-      if ($('ul.onepage-pagination').length < 1) $("<ul class='onepage-pagination'></ul>").prependTo("body");
+      if ($('ul.onepage-pagination').length < 1) $("<ul class='onepage-pagination'></ul>").prependTo(".wrapper");
 
       if( settings.direction == 'horizontal' ) {
         posLeft = (el.find(".onepage-pagination").width() / 2) * -1;
@@ -336,15 +336,15 @@
 
       if (parseInt(init_index) <= total && parseInt(init_index) > 0) {
         $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active")
-        $("body").addClass("viewing-page-"+ init_index)
+        $(".wrapper").addClass("viewing-page-"+ init_index)
         if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
 
         next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
         if(next) {
           next.addClass("active")
           if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
-          $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-          $("body").addClass("viewing-page-"+next.data("index"))
+          $(".wrapper")[0].className = $(".wrapper")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+          $(".wrapper").addClass("viewing-page-"+next.data("index"))
           if (history.replaceState && settings.updateURL == true) {
             var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
             history.pushState( {}, document.title, href );
@@ -354,12 +354,12 @@
         el.transformPage(settings, pos, init_index);
       } else {
         $(settings.sectionContainer + "[data-index='1']").addClass("active")
-        $("body").addClass("viewing-page-1")
+        $(".wrapper").addClass("viewing-page-1")
         if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
       }
     }else{
       $(settings.sectionContainer + "[data-index='1']").addClass("active")
-      $("body").addClass("viewing-page-1")
+      $(".wrapper").addClass("viewing-page-1")
       if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
     }
 
@@ -374,7 +374,7 @@
     $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
       event.preventDefault();
       var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-      if(!$("body").hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
+      if(!$(".wrapper").hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
     });
 
 
@@ -390,7 +390,7 @@
       $(document).keydown(function(e) {
         var tag = e.target.tagName.toLowerCase();
 
-        if (!$("body").hasClass("disabled-onepage-scroll")) {
+        if (!$(".wrapper").hasClass("disabled-onepage-scroll")) {
           switch(e.which) {
             case 38:
               if (tag != 'input' && tag != 'textarea') el.moveUp()

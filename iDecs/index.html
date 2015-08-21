@@ -8,26 +8,48 @@
     <script src="javascript/jquery.onepage-scroll.js"></script>
 
 </head>
-<body>
+
 <!--Left site open setting menu -->
 <div id="leftMenu" class="settingMenuHide">
     <div class='menu'>
-        <nav>
-            <ul>
-                <li> <a href='home_is_visible'>Home</a> </li>
-                <li> <a href='aboutus_is_visible'>About</a> </li>
-                <li> <a href='clients_is_visible'>Clients</a> </li>
-                <li> <a href='contactus_is_visible'>Contact Us</a> </li>
-            </ul>
-        </nav>
+        <ul>
+                <li> <a href='idces_is_visible'>iDecs</a> </li>
+                <li> <a href='wifi_is_visible'>Wifi</a> </li>
+                <li> <a href='device_is_visible'>Add Device</a> </li>
+                <li> <a href='setting_is_visible'>Device Setting</a> </li>
+                <li> <a href='buy_is_visible'>New Device Needed</a></li>
+        </ul>
     </div>
-<div id="settingButton">
+    <div id="settingButton">
     <p>We need setting icons</p>
     <p>A seting icon with max with of 75px and 650px height </p>
     <p>At it max width and height   it has to have a right side top and bottom radius of 75px </p>
     <h1>Click here to open setting menu</h1>
+    </div>
+    <div class="settingContent">
+    <div class='content idces'>
+        <h1>idecs</h1>
+        <p>Big talk about iDecs</p>
+    </div>
+    <div class='content wifi'>
+        <h1>Wifi</h1>
+        <p>Wifi setting, Need to build php library for DHCPcd hook</p>
+    </div>
+    <div class='content device'>
+        <h1>Add Device</h1>
+        <p>New device page ,dont have a solution for setup device yet ,But it will most likely need a php library to add all-access-MAC for dhcp filter </p>
+    </div>
+    <div class='content setting'>
+        <h1>configuration</h1>
+        <p>Configuration menu for activie remote control ,Login,and some other basic settings </p>
+    </div>
+    <div class="content buy">
+        <h1>Need New iDces Compatible  Device?</h1>
+        <p>list of third party device you can buy that would work with iDecs</p>
+    </div>
+    </div>
 </div>
-</div>
+
     <!--Code below is the content of the room view on main desktop-->
 <div id="roomView" class="wrapper">
     <div class="main">
@@ -57,6 +79,22 @@
 
         $('#settingButton').on('click', function () {
             $('#leftMenu').toggleClass('settingMenuShow');
+            $('.menu ul li').each(function () {
+                var link = $(this).find('a').attr('href');
+                $('body').removeClass(link);
+            });
+        });
+        function removeClasses() {
+            $('.menu ul li').each(function () {
+                var link = $(this).find('a').attr('href');
+                $('body').removeClass(link);
+            });
+        }
+        $('.menu a').on('click', function (e) {
+            e.preventDefault();
+            removeClasses();
+            var link = $(this).attr('href');
+            $('body').addClass(link);
         });
     });
 
