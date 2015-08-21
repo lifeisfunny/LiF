@@ -93,7 +93,7 @@ html,body{
     font-size: 18px;
     -webkit-transform: translateX(100%);
     opacity: 0;
-    -webkit-transition: background 0.5s ease 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s, opacity ease-in 1s 0.5s;
+    -webkit-transition:opacity ease-in 1s 0.5s,background 0.5s ease 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
 }
 .idces_is_visible .idces,
 .wifi_is_visible .wifi,
