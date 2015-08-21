@@ -8,7 +8,9 @@
     <script src="javascript/jquery.onepage-scroll.js"></script>
 
 </head>
+<div id="settingButton" class="settingButtonClose">
 
+</div>
 <!--Left site open setting menu -->
 <div id="leftMenu" class="settingMenuHide">
     <div class='menu'>
@@ -20,12 +22,7 @@
                 <li> <a href='buy_is_visible'>New Device Needed</a></li>
         </ul>
     </div>
-    <div id="settingButton">
-    <p>We need setting icons</p>
-    <p>A seting icon with max with of 75px and 650px height </p>
-    <p>At it max width and height   it has to have a right side top and bottom radius of 75px </p>
-    <h1>Click here to open setting menu</h1>
-    </div>
+
     <div class="settingContent">
     <div class='content idces'>
         <h1>iDecs</h1>
@@ -82,6 +79,7 @@
             $('.menu ul li').each(function () {
                 var link = $(this).find('a').attr('href');
                 $('body').removeClass(link);
+                $('#settingButton').toggleClass('settingButtonOpen');
             });
         });
         function removeClasses() {

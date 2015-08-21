@@ -3,15 +3,15 @@ html,body{
     max-width: 1200px;
     max-height: 680px;
     padding: 0px;
-    margin: 0px;  background-image: url("../artwork/background.jpg");
+    margin: 0px;  background-image: url("../artwork/background2.jpeg");
     background-size: cover;
 }
 .wrapper {
     position: absolute;
     height: 630px;
     width: 1000px;
-    margin-top: 25px;
-    margin-left: 100px;
+    margin-top: 45px;
+    margin-left: 45px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -26,12 +26,12 @@ html,body{
     margin-top: 15px;
     display: block;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0);
     box-shadow:0px 0px 50px 10px rgb(0, 0, 0) inset;
-    -webkit-transform: translateX(-1125px);
-    border-bottom-right-radius: 75px;
-    border-top-right-radius: 75px;
-    -webkit-transition: border-bottom-right-radius 0.5s, border-top-right-radius, background-color 0.5s, -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: translateX(-1200px);
+    opacity: 0;
+    -webkit-transition:opacity 1s, background-color 0.5s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 }
 .settingMenuShow{
     position: absolute;
@@ -39,20 +39,39 @@ html,body{
     display: block;
     -webkit-transform: translateX(-100px);
     background-color: rgba(0, 4, 4, 0.8);
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
-    -webkit-transition: border-bottom-right-radius 0.5s, border-top-right-radius, background-color 0.5s, -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 100;
+    opacity: 1;
+    -webkit-transition:opacity 1s, background-color 0.5s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-#settingButton{
+.settingButtonClose{
     position: relative;
-    width: 75px;
-    height: 100%;
-    float: right;
-    background-color: rgba(255, 255, 255, 0.4);
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-top: 0px;
+    background-color: rgb(255, 255, 255);
     z-index: 100;
+    -webkit-transform: translateX(0px);
+    -webkit-transition:background-color 1s,box-shadow 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),margin-top 0.5s ease 1s;
+    border-radius: 80px;
+    box-shadow:10px 10px 20px 10px #ffffff inset;
+    background-color: #040404;
 }
+.settingButtonOpen{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 302.5px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    -webkit-transform: translateX(1025px);
+    -webkit-transition:background-color 1s,box-shadow 1s, margin-top 1s ease, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 80px;
+    box-shadow:0px 0px 20px 10px #000404 inset;
+    color: #ffffff;
+}
+
 .menu{
     position: absolute;
     float: left;
@@ -91,7 +110,7 @@ html,body{
     width: 900px;
     padding-left: 25px;
     font-size: 18px;
-    -webkit-transform: translateX(100%);
+    -webkit-transform: translateX(125%);
     opacity: 0;
     -webkit-transition:opacity ease-in 1s 0.5s,background 0.5s ease 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
 }
