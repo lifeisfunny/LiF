@@ -3,40 +3,38 @@ html,body{
     max-width: 1200px;
     max-height: 680px;
     padding: 0px;
-    margin: 0px;  background-image: url("../artwork/background2.jpeg");
+    margin: 0px;  background-image: url("../artwork/background3.jpg");
     background-size: cover;
 }
 .wrapper {
     position: absolute;
     height: 630px;
-    width: 1000px;
+    width: 1145px;
     margin-top: 45px;
     margin-left: 45px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 5px #ffffff;
 }
 .main section  {
     overflow: hidden;
-    box-shadow:0px 0px 50px 10px #000000 inset;
+    box-shadow:0px 0px 10px 1px #ffffff inset;
 }
 .settingMenuHide{
     position: absolute;
-    height: 650px;
+    height: 670px;
     width:1200px;
-    margin-top: 15px;
+    margin-top: 5px;
     display: block;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
-    box-shadow:0px 0px 50px 10px rgb(0, 0, 0) inset;
+    box-shadow:0px 0px 10px 5px rgb(255, 255, 255);
     -webkit-transform: translateX(-1200px);
     opacity: 0;
     -webkit-transition:opacity 1s, background-color 0.5s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
+    z-index: 99;
 }
 .settingMenuShow{
-    position: absolute;
-    z-index: 10;
-    display: block;
     -webkit-transform: translateX(-100px);
     background-color: rgba(0, 4, 4, 0.8);
     opacity: 1;
@@ -44,44 +42,37 @@ html,body{
 }
 
 .settingButtonClose{
-    position: relative;
+    position: absolute;
     width: 80px;
     height: 80px;
     float: left;
-    margin-top: 0px;
     background-color: rgb(255, 255, 255);
     z-index: 100;
-    -webkit-transform: translateX(0px);
-    -webkit-transition:background-color 1s,box-shadow 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),margin-top 0.5s ease 1s;
-    border-radius: 80px;
-    box-shadow:10px 10px 20px 10px #ffffff inset;
+    -webkit-transform: translateX(-0px);
+    -webkit-transition:border-radius 1s,background-color 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-bottom-right-radius: 80px;
+    -webkit-box-shadow:0px 0px 5px 5px #ffffff;
     background-color: #040404;
 }
 .settingButtonOpen{
-    position: relative;
-    width: 80px;
-    height: 80px;
-    margin-top: 302.5px;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    z-index: 100;
+    border-radius: 0px;
     -webkit-transform: translateX(1025px);
-    -webkit-transition:background-color 1s,box-shadow 1s, margin-top 1s ease, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-radius: 80px;
-    box-shadow:0px 0px 20px 10px #000404 inset;
-    color: #ffffff;
+    -webkit-transition:border-radius 1s,background-color 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: #ffffff;
 }
 
 .menu{
     position: absolute;
     float: left;
-    height: 100%;
+    height:660px;
     width: 100px;
-    margin-left: 100px;
+    margin-top: 5px;
+    margin-left: 105px;
     background-color: #1c1c1c;
     z-index: 100;
     box-shadow:0px 0px 50px 10px #c1c1c1 inset;
     border-radius: 10px;
+    box-shadow:0px 0px 10px 5px rgb(255, 255, 255);
 }
 .menu ul {
     margin: 0;padding: 20px 0;list-style: none;
