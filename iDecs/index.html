@@ -76,8 +76,7 @@
             sectionContainer: "section",
             easing: "ease",
             responsiveFallback: 600,
-            loop: true ,
-            pagination: true,
+            loop: true
         });
 
         $('#securityButton').on('click', function(){
@@ -89,22 +88,19 @@
             $('#settingButton').toggleClass('ButtonOpen');
             $('#settingMenu').toggleClass('MenuShow');
         });
+        
 
-        $('.menu ul li').each(function () {
-            var link = $(this).find('a').attr('href');
-            $('#roomView').removeClass(link);
-        });
         function removeClasses() {
             $('.menu ul li').each(function () {
                 var link = $(this).find('a').attr('href');
-                $('body').removeClass(link);
+                $('#settingMenu').removeClass(link);
             });
         }
         $('.menu a').on('click', function (e) {
             e.preventDefault();
             removeClasses();
             var link = $(this).attr('href');
-            $('#roomView').addClass(link);
+            $('#settingMenu').addClass(link);
         });
     });
 

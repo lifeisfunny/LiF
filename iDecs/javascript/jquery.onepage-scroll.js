@@ -240,7 +240,7 @@
       } else {
         if($("#roomView").hasClass("disabled-onepage-scroll")) {
           $("#roomView").removeClass("disabled-onepage-scroll");
-          $("html, #roomView, .wrapper").animate({ scrollTop: 0 }, "fast");
+          $("#roomView, .wrapper").animate({ scrollTop: 0 }, "fast");
         }
 
 
