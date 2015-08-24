@@ -8,11 +8,14 @@
     <script src="javascript/jquery.onepage-scroll.js"></script>
 
 </head>
-<div id="settingButton" class="settingButtonClose">
-
+<body>
+<div class="hotButtonWrapper">
+     <div id="settingButton" class="ButtonClose"></div>
+     <div id="securityButton" class="ButtonClose"></div>
 </div>
-<!--Left site open setting menu -->
-<div id="leftMenu" class="settingMenuHide">
+
+    <!--Left site open setting menu -->
+<div id="settingMenu" class="MenuHide">
     <div class='menu'>
         <ul>
                 <li> <a href='idces_is_visible'>iDecs</a> </li>
@@ -47,6 +50,8 @@
     </div>
 </div>
 
+    <!--security menu  -->
+<div id="securityMenu" class="MenuHide"></div>
     <!--Code below is the content of the room view on main desktop-->
 <div id="roomView" class="wrapper">
     <div class="main">
@@ -71,16 +76,23 @@
             sectionContainer: "section",
             easing: "ease",
             responsiveFallback: 600,
-            loop: false
+            loop: true ,
+            pagination: true,
         });
 
-        $('#settingButton').on('click', function () {
-            $('#leftMenu').toggleClass('settingMenuShow');
-            $('.menu ul li').each(function () {
-                var link = $(this).find('a').attr('href');
-                $('body').removeClass(link);
-                $('#settingButton').toggleClass('settingButtonOpen');
-            });
+        $('#securityButton').on('click', function(){
+            $('#securityButton').toggleClass('ButtonOpen');
+            $('#securityMenu').toggleClass('MenuShow');
+        });
+
+        $('#settingButton').on('click', function (){
+            $('#settingButton').toggleClass('ButtonOpen');
+            $('#settingMenu').toggleClass('MenuShow');
+        });
+
+        $('.menu ul li').each(function () {
+            var link = $(this).find('a').attr('href');
+            $('#roomView').removeClass(link);
         });
         function removeClasses() {
             $('.menu ul li').each(function () {
@@ -92,7 +104,7 @@
             e.preventDefault();
             removeClasses();
             var link = $(this).attr('href');
-            $('body').addClass(link);
+            $('#roomView').addClass(link);
         });
     });
 

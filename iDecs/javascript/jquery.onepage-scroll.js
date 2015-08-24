@@ -146,8 +146,8 @@
         $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
       }
 
-      $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-      $("body").addClass("viewing-page-"+next.data("index"))
+      $("#roomView")[0].className = $("#roomView")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+      $("#roomView").addClass("viewing-page-"+next.data("index"))
 
       if (history.replaceState && settings.updateURL == true) {
         var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (index + 1);
@@ -180,8 +180,8 @@
         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
         $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
       }
-      $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-      $("body").addClass("viewing-page-"+next.data("index"))
+      $("#roomView")[0].className = $("#roomView")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+      $("#roomView").addClass("viewing-page-"+next.data("index"))
 
       if (history.replaceState && settings.updateURL == true) {
         var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (index - 1);
@@ -199,8 +199,8 @@
         next.addClass("active")
         $(".onepage-pagination li a" + ".active").removeClass("active");
         $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
-        $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-        $("body").addClass("viewing-page-"+next.data("index"))
+        $("#roomView")[0].className = $("#roomView")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+        $("#roomView").addClass("viewing-page-"+next.data("index"))
 
         pos = ((page_index - 1) * 100) * -1;
 
@@ -234,21 +234,21 @@
 
       //end modification
       if (valForTest) {
-        $("body").addClass("disabled-onepage-scroll");
+        $("#roomView").addClass("disabled-onepage-scroll");
         $(document).unbind('mousewheel DOMMouseScroll MozMousePixelScroll');
         el.swipeEvents().unbind("swipeDown swipeUp");
       } else {
-        if($("body").hasClass("disabled-onepage-scroll")) {
-          $("body").removeClass("disabled-onepage-scroll");
-          $("html, body, .wrapper").animate({ scrollTop: 0 }, "fast");
+        if($("#roomView").hasClass("disabled-onepage-scroll")) {
+          $("#roomView").removeClass("disabled-onepage-scroll");
+          $("html, #roomView, .wrapper").animate({ scrollTop: 0 }, "fast");
         }
 
 
         el.swipeEvents().bind("swipeDown",  function(event){
-          if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
+          if (!$("#roomView").hasClass("disabled-onepage-scroll")) event.preventDefault();
           el.moveUp();
         }).bind("swipeUp", function(event){
-          if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
+          if (!$("#roomView").hasClass("disabled-onepage-scroll")) event.preventDefault();
           el.moveDown();
         });
 
@@ -310,10 +310,10 @@
     });
 
     el.swipeEvents().bind("swipeDown",  function(event){
-      if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
+      if (!$("#roomView").hasClass("disabled-onepage-scroll")) event.preventDefault();
       el.moveUp();
     }).bind("swipeUp", function(event){
-      if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
+      if (!$("#roomView").hasClass("disabled-onepage-scroll")) event.preventDefault();
       el.moveDown();
     });
 

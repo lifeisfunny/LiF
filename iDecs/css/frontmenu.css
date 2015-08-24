@@ -1,17 +1,23 @@
-html,body{
+html{
     overflow: hidden;
     max-width: 1200px;
     max-height: 680px;
+
+}
+body{
     padding: 0px;
-    margin: 0px;  background-image: url("../artwork/background3.jpg");
-    background-size: cover;
+    margin: 0px;
+    background-image:url("../artwork/background2.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 .wrapper {
     position: absolute;
     height: 630px;
-    width: 1145px;
-    margin-top: 45px;
-    margin-left: 45px;
+    width: 1055px;
+    margin-top: 40px;
+    margin-left: 10px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 10px 5px #ffffff;
@@ -20,7 +26,7 @@ html,body{
     overflow: hidden;
     box-shadow:0px 0px 10px 1px #ffffff inset;
 }
-.settingMenuHide{
+.MenuHide{
     position: absolute;
     height: 670px;
     width:1200px;
@@ -31,34 +37,48 @@ html,body{
     box-shadow:0px 0px 10px 5px rgb(255, 255, 255);
     -webkit-transform: translateX(-1200px);
     opacity: 0;
+    z-index: 2;
     -webkit-transition:opacity 1s, background-color 0.5s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 99;
 }
-.settingMenuShow{
+.MenuShow{
     -webkit-transform: translateX(-100px);
     background-color: rgba(0, 4, 4, 0.8);
     opacity: 1;
     -webkit-transition:opacity 1s, background-color 0.5s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.settingButtonClose{
-    position: absolute;
+.hotButtonWrapper{
+    position: relative;
+    width: 150px;
+    height: auto;
+    background-color: transparent;
+    margin-top: 20px;
+    margin-right: 15px;
+    float: right;
+}
+
+
+.ButtonClose{
+    position: relative;
+    display: inline-block;
     width: 80px;
     height: 80px;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    z-index: 100;
-    -webkit-transform: translateX(-0px);
-    -webkit-transition:border-radius 1s,background-color 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-bottom-right-radius: 80px;
+    float: right;
+    margin:15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-transform: translateX(5px);
+    -webkit-transition:-webkit-box-shadow 1s,background-color 1s,-webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-box-shadow:0px 0px 5px 5px #ffffff;
-    background-color: #040404;
+    z-index: 2;
 }
-.settingButtonOpen{
-    border-radius: 0px;
-    -webkit-transform: translateX(1025px);
-    -webkit-transition:border-radius 1s,background-color 1s, -webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+.ButtonOpen{
+    background-color: rgba(132, 132, 132, 0.8);
+    -webkit-transform: translateX(-30px);
+    -webkit-transition:-webkit-box-shadow 1s,background-color 1s,-webkit-transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     background-color: #ffffff;
+    -webkit-box-shadow:0px 0px 10px 10px #ffffff;
+    z-index: 3;
 }
 
 .menu{
@@ -67,7 +87,7 @@ html,body{
     height:660px;
     width: 100px;
     margin-top: 5px;
-    margin-left: 105px;
+    margin-left: 110px;
     background-color: #1c1c1c;
     z-index: 100;
     box-shadow:0px 0px 50px 10px #c1c1c1 inset;

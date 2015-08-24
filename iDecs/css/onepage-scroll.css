@@ -16,7 +16,7 @@
 .onepage-pagination {
   position: absolute;
   right: 30px;
-  top: 30%;
+  top: 75%;
   z-index: 5;
   list-style: none;
   margin: 0;
@@ -27,18 +27,18 @@
   text-align: center;
 }
 .onepage-pagination li a{
-  padding: 10px;
-  width: 4px;
-  height: 4px;
+  padding: 20px;
+  width: 10px;
+  height: 10px;
   display: block;
   
 }
 .onepage-pagination li a:before{
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(0,0,0,0.85);
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -48,7 +48,7 @@
   width: 10px;
   height: 10px;
   background: none;
-  border: 1px solid black;
+  border: 2px solid #ffffff;
   margin-top: -4px;
   left: 8px;
 }
