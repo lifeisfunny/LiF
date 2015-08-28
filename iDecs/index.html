@@ -18,11 +18,11 @@
 <div id="settingMenu" class="MenuHide">
     <div class='menu'>
         <ul>
-                <li> <a href='idces_is_visible'>iDecs</a> </li>
-                <li> <a href='wifi_is_visible'>Wifi</a> </li>
-                <li> <a href='device_is_visible'>Add Device</a> </li>
-                <li> <a href='setting_is_visible'>Device Setting</a> </li>
-                <li> <a href='buy_is_visible'>New Device Needed</a></li>
+                <li href='idces_is_visible'>iDecs</li>
+                <li href='wifi_is_visible'>Wifi</li>
+                <li href='device_is_visible'>Add Device</li>
+                <li href='setting_is_visible'>Device Setting</li>
+                <li href='buy_is_visible'>New Device Needed</li>
         </ul>
     </div>
 
@@ -92,11 +92,11 @@
 
         function removeClasses() {
             $('.menu ul li').each(function () {
-                var link = $(this).find('a').attr('href');
+                var link = $(this).attr('href');
                 $('#settingMenu').removeClass(link);
             });
         }
-        $('.menu a').on('click', function (e) {
+        $('.menu li').on('click', function (e) {
             e.preventDefault();
             removeClasses();
             var link = $(this).attr('href');
